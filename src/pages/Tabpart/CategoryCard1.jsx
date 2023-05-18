@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
-import {  useNavigate } from "react-router-dom";
+
 
 const CategoryCard1 = ({category1}) => {
-    const navigate = useNavigate()
+   
     const {img,price,Rating,_id} = category1;
     console.log(category1);
   
@@ -14,9 +15,7 @@ const CategoryCard1 = ({category1}) => {
             <h2 className="card-title"> </h2>
             <p>Price: ${price}</p>
             <p>Rating: {Rating}</p>
-            <div className="card-actions justify-end">
-                <button onClick={()=> navigate(`viewDetails/${_id}`)} className="btn btn-primary">View Details</button>
-            </div>
+           
         </div>
     </div>
     );

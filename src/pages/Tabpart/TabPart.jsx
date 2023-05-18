@@ -4,11 +4,13 @@ import 'react-tabs/style/react-tabs.css';
 import CategoryCard from './categoryCard';
 import CategoryCard1 from './CategoryCard1';
 import CategoryCard2 from './CategoryCard2';
+import CategoryCard3 from './CategoryCard3';
 
 const TabPart = () => {
     const [categories, setCategories] = useState([]);
     const [categories1, setCategories1] = useState([]);
     const [categories2, setCategories2] = useState([]);
+    const [categories3, setCategories3] = useState([]);
 
     useEffect(()=>{
         fetch('http://localhost:5000/categories')
@@ -26,10 +28,16 @@ const TabPart = () => {
         .then(res => res.json())
         .then(data => setCategories2(data))
     },[])
+    useEffect(()=>{
+        fetch('http://localhost:5000/categories3')
+        .then(res => res.json())
+        .then(data => setCategories3(data))
+    },[])
 
 
     console.log(categories1);
     console.log(categories2);
+    console.log(categories3);
 
     // const {img1,img2,img3,img4,img5,img6} = categories;
     
@@ -77,6 +85,18 @@ const TabPart = () => {
                         >
 
                         </CategoryCard2>)
+                    }
+                 </div>
+                </TabPanel>
+                <TabPanel>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                    {
+                        categories3.map(category3 => <CategoryCard3
+                        key={category3._id}
+                        category3={category3}
+                        >
+
+                        </CategoryCard3>)
                     }
                  </div>
                 </TabPanel>
