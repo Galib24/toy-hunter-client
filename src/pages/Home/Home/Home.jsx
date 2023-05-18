@@ -1,3 +1,4 @@
+import TabPart from "../../Tabpart/TabPart";
 import Banner from "../Banner/Banner";
 import ExcitedToy from "../ExcitedToy/ExcitedToy";
 
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <ExcitedToy></ExcitedToy>
+            <TabPart></TabPart>
             
         </div>
     );
