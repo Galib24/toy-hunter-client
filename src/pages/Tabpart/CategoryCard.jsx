@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
 
+import { useNavigate } from "react-router-dom";
+
 
 const CategoryCard = ({category}) => {
-    const {img,title,price,Rating} = category
+   
+    const navigate = useNavigate()
+   
+    const {img,title,price,Rating,_id} = category
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
         <figure><img className="w-full" src={img} alt="Shoes" /></figure>
@@ -11,7 +16,7 @@ const CategoryCard = ({category}) => {
             <p>Price: ${price}</p>
             <p>Rating: {Rating}</p>
             <div className="card-actions justify-end">
-                <button className="btn btn-primary">View Details</button>
+                <button onClick={()=> navigate(`viewDetails/${_id}`)} className="btn btn-primary">View Details</button>
             </div>
         </div>
     </div>
