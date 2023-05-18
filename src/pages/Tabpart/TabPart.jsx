@@ -2,15 +2,34 @@ import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import CategoryCard from './categoryCard';
+import CategoryCard1 from './CategoryCard1';
+import CategoryCard2 from './CategoryCard2';
 
 const TabPart = () => {
     const [categories, setCategories] = useState([]);
+    const [categories1, setCategories1] = useState([]);
+    const [categories2, setCategories2] = useState([]);
 
     useEffect(()=>{
         fetch('http://localhost:5000/categories')
         .then(res => res.json())
         .then(data => setCategories(data))
     },[])
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/categories1')
+        .then(res => res.json())
+        .then(data => setCategories1(data))
+    },[])
+    useEffect(()=>{
+        fetch('http://localhost:5000/categories2')
+        .then(res => res.json())
+        .then(data => setCategories2(data))
+    },[])
+
+
+    console.log(categories1);
+    console.log(categories2);
 
     // const {img1,img2,img3,img4,img5,img6} = categories;
     
@@ -19,8 +38,9 @@ const TabPart = () => {
             <h3 className="text-5xl text-center mt-5 text-violet-600 font-bold">Toy Area</h3>
             <Tabs className='mt-5 mb-5'>
                 <TabList>
+                    <Tab>All Category</Tab>
                     <Tab>Math Toys</Tab>
-                    <Tab>Language Toys</Tab>
+                    <Tab>Language Toy</Tab>
                     <Tab>Engineering toys</Tab>
                 </TabList>
 
@@ -39,24 +59,24 @@ const TabPart = () => {
                 <TabPanel>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {
-                        categories.map(category => <CategoryCard
-                        key={category._id}
-                        category={category}
+                        categories1.map(category1 => <CategoryCard1
+                        key={category1._id}
+                        category1={category1}
                         >
 
-                        </CategoryCard>)
+                        </CategoryCard1>)
                     }
                  </div>
                 </TabPanel>
                 <TabPanel>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {
-                        categories.map(category => <CategoryCard
-                        key={category._id}
-                        category={category}
+                        categories2.map(category2 => <CategoryCard2
+                        key={category2._id}
+                        category2={category2}
                         >
 
-                        </CategoryCard>)
+                        </CategoryCard2>)
                     }
                  </div>
                 </TabPanel>

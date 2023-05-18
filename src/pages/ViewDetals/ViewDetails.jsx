@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
 const ViewDetails = () => {
@@ -23,7 +23,9 @@ const ViewDetails = () => {
                     <p className="py-2">Price: ${price}</p>
                     <p className="py-1">Rating: {Rating}</p>
                     <p className="py-1">{description}</p>
-                    <button className="btn btn-primary">Check Out</button>
+                    <Link to={`/checkout/${_id}`}>
+                    <button className="btn btn-accent">Proceed CheckOut</button>
+                    </Link>
                 </div>
             </div>
         </div>
