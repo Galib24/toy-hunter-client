@@ -1,3 +1,4 @@
+import Review from "../../Review/Review";
 import TabPart from "../../Tabpart/TabPart";
 import Banner from "../Banner/Banner";
 import ExcitedToy from "../ExcitedToy/ExcitedToy";
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner></Banner>
             <ExcitedToy></ExcitedToy>
             <TabPart></TabPart>
+            <Review></Review>
             
         </div>
     );

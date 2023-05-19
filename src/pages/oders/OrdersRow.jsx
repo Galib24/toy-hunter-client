@@ -32,7 +32,7 @@ const OrdersRow = ({ order,handleDelete }) => {
             </td>
             <td>{toyname}</td>
             <td>{subCategory}</td>
-            <td>{ratings}</td>
+            <td className="text-center">{ratings}</td>
             <td>{price}</td>
             <td className="text-center">{quantity}</td>
             <th>
