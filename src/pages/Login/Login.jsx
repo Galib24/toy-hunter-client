@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaGoogle } from 'react-icons/fa';
 
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext)
+    const {signIn,handleGoogleLogIn} = useContext(AuthContext)
     const handleLogin = e =>{
         e.preventDefault();
         const form = e.target;
@@ -50,6 +51,11 @@ const Login = () => {
                         </form>
                         <p className="my-4 text-center
                         ">New to Kiddos? <Link className=" text-violet-600 font-bold" to='/signup'>Sign Up</Link></p>
+                    </div>
+                    <div className="text-center">
+                    <button onClick={handleGoogleLogIn} className="shadow-lg p-3 mb-5 text-center  rounded bg-light ">
+                            <FaGoogle style={{ color: 'black' }}></FaGoogle>
+                        </button>
                     </div>
                 </div>
             </div>
