@@ -9,6 +9,7 @@ import CheckOut from "../pages/CheckOut/CheckOut";
 import Orders from "../pages/oders/Orders";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/Error/ErrorPage";
+import BlogPage from "../pages/Blog/BlogPage";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
         path: 'orders',
         element: <PrivateRoute><Orders></Orders></PrivateRoute>
       },
+      {
+        path: 'blog',
+        element: <BlogPage></BlogPage>
+      }
     
     ]
   },

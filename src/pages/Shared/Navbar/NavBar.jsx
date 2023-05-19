@@ -13,7 +13,7 @@ const NavBar = () => {
     }
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
-        {/* <li><a>All Toys</a></li> */}
+        <li><Link to='/blog'>Blog</Link> </li>
         {user?.email ? <>
             <li><Link to='/orders'>All toys</Link> </li>
             <li><button onClick={handleLogOut}>Log Out</button></li>
