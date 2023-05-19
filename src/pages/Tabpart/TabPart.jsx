@@ -13,23 +13,23 @@ const TabPart = () => {
     const [categories3, setCategories3] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/categories')
+        fetch('https://toy-hunter-server-delta.vercel.app/categories')
         .then(res => res.json())
         .then(data => setCategories(data))
     },[])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/categories1')
+        fetch('https://toy-hunter-server-delta.vercel.app/categories1')
         .then(res => res.json())
         .then(data => setCategories1(data))
     },[])
     useEffect(()=>{
-        fetch('http://localhost:5000/categories2')
+        fetch('https://toy-hunter-server-delta.vercel.app/categories2')
         .then(res => res.json())
         .then(data => setCategories2(data))
     },[])
     useEffect(()=>{
-        fetch('http://localhost:5000/categories3')
+        fetch('https://toy-hunter-server-delta.vercel.app/categories3')
         .then(res => res.json())
         .then(data => setCategories3(data))
     },[])

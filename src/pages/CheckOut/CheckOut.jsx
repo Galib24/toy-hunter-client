@@ -39,7 +39,7 @@ const CheckOut = () => {
         console.log(orderInfo);
 
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://toy-hunter-server-delta.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

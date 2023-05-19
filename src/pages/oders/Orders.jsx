@@ -6,7 +6,7 @@ import OrdersRow from "./OrdersRow";
 const Orders = () => {
     const { user } = useContext(AuthContext);
     const [orders, setOrders] = useState([])
-    const url = `http://localhost:5000/orders?email=${user?.email}`;
+    const url = `https://toy-hunter-server-delta.vercel.app/orders?email=${user?.email}`;
 
 
 
@@ -20,7 +20,7 @@ const Orders = () => {
     const handleDelete = id => {
         const proceed = confirm('Are tou sure you want to delete!');
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`,{
+            fetch(`https://toy-hunter-server-delta.vercel.app/orders/${id}`,{
                 method: 'DELETE'
             })
             .then(res => res.json())

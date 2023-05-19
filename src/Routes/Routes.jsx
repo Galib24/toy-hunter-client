@@ -32,12 +32,12 @@ const router = createBrowserRouter([
       {
         path: 'viewDetails/:detailsId',
         element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-        loader: ({ params }) => fetch('http://localhost:5000/categories')
+        loader: ({ params }) => fetch('https://toy-hunter-server-delta.vercel.app/categories')
       },
       {
         path: 'checkout/:id',
         element: <CheckOut></CheckOut>,
-        loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-hunter-server-delta.vercel.app/categories/${params.id}`)
       },
       {
         path: 'orders',
