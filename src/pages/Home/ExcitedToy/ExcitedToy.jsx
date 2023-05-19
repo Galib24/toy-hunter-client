@@ -2,9 +2,9 @@
 
 const ExcitedToy = () => {
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200 ">
             <div className="hero-content flex-col lg:flex-row-reverse">
-             <div className="lg:w-1/2 relative">
+             <div className="lg:w-1/2 relative gap-4 mb-20">
              <img src="https://i.ibb.co/2k9ZnqV/iut.png" className="w-3/4 rounded-lg border-8 border-secondary shadow-2xl" />
              <img src="https://i.ibb.co/6H0VjDn/wdopwe.png" className="w-1/2 right-5 top-2/3 absolute border-8 border-secondary rounded-lg  shadow-2xl" />
              <img src="https://i.ibb.co/znw6GJy/adds.png" className="absolute w-44 top-2 border-8 border-secondary" alt="" />

@@ -54,9 +54,10 @@ const Orders = () => {
                             <th>User Name</th>
                             <th>Toy Name</th>
                             <th>Toy Category</th>
+                            <th>Toy Ratings</th>
                             <th>Toy Price</th>
                             <th>Toy Quantity</th>
-                            <th>Toy Details</th>
+                           
                             <th></th>
                         </tr>
                     </thead>

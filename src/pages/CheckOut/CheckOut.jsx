@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 
 const CheckOut = () => {
     const category = useLoaderData();
-    const { title, _id, price, img } = category;
+    const { title, _id, price, Rating } = category;
     const { user } = useContext(AuthContext)
 
 
@@ -16,8 +16,10 @@ const CheckOut = () => {
 
         const form = e.target;
         const name = form.name.value;
+        const email = form.email.value;
         const toyname = form.toyname.value;
         const subCategory = form.subCategory.value;
+        const ratings = form.ratings.value;
         const price = form.price.value;
         const quantity = form.quantity.value;
         const photo = form.photo.value;
@@ -25,7 +27,9 @@ const CheckOut = () => {
         const orderInfo = {
             customerName: name,
             toyname,
+            email,
             subCategory,
+            ratings,
             price,
             quantity,
             photo,
@@ -70,6 +74,12 @@ const CheckOut = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input type="text" defaultValue={user?.email} name="email" placeholder="email" className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
                             <span className="label-text">Toy Name</span>
                         </label>
                         <input type="text" defaultValue={title} name="toyname" placeholder="Toy Name" className="input input-bordered" />
@@ -80,6 +90,12 @@ const CheckOut = () => {
                             <span className="label-text">Sub Category</span>
                         </label>
                         <input type="text" name="subCategory" placeholder="Sub Category" className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Ratings</span>
+                        </label>
+                        <input type="text" name="ratings" defaultValue={Rating} placeholder="Ratings" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -106,6 +122,8 @@ const CheckOut = () => {
                 <div className="form-control mt-6">
 
                     <input className="btn btn-primary btn-block" type="submit" value='Order Confirm' />
+                   <br />
+                   <Link to='/' className="mt-5"> <input  className="btn btn-primary btn-block" type="submit" value='Back To Home' /></Link>
                 </div>
             </form>
             <div className="card-body">

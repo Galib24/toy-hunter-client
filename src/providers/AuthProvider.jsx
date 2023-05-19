@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
 export const AuthContext = createContext();
@@ -9,6 +9,9 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    // const [success, setSuccess] = useState("");
+    // // Google function for login
+    
 
 
     const createUser = (email, password) => {
@@ -26,8 +29,34 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
+    // const updateUserData = (user,name,photo)=>{
+    //     updateProfile(user,{
+    //         displayName: name,
+    //         photoURL: photo
+    //     })
+    //     .then(()=>{
+    //         console.log('user name updated',name,photo);
+    //     })
+    //     .catch(error => {
+    //         console.log(error);
+    //     })
+    // }
+
 
     // onAuthStateCHanged
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleLogIn = () => {
+        signInWithPopup(auth, googleProvider)
+            .then((result) => {
+                const user = result.user;
+                console.log('Successfully Signup');
+            })
+            .catch(error => {
+                console.log('error', error);
+            })
+
+    }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -45,7 +74,9 @@ const AuthProvider = ({ children }) => {
         loading,
         createUser,
         signIn,
-        logOut
+        logOut,
+        handleGoogleLogIn
+        // updateUserData
     }
 
 

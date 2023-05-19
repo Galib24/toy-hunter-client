@@ -1,9 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
+import { useNavigate } from "react-router-dom";
+
 
 const OrdersRow = ({ order,handleDelete }) => {
-    const { _id, customerName, toyname, photo, price, quantity, subCategory } = order
+    const { _id, customerName, toyname, photo, price, quantity, subCategory,ratings,email } = order
+    // const navigate = useNavigate()
 
     return (
         <tr>
@@ -21,17 +24,20 @@ const OrdersRow = ({ order,handleDelete }) => {
                 </div>
 
             </td>
-            <td>
+            <td className="text-center">
                 {customerName}
+                <br />
 
+            <td>{email}</td>
             </td>
             <td>{toyname}</td>
             <td>{subCategory}</td>
+            <td>{ratings}</td>
             <td>{price}</td>
-            <td>{quantity}</td>
-            <th>
-                <button className="btn btn-ghost btn-xs">details</button>
-            </th>
+            <td className="text-center">{quantity}</td>
+            {/* <th>
+                <button  className="btn btn-ghost btn-xs">details</button>
+            </th> */}
         </tr>
     );
 };
