@@ -17,10 +17,29 @@ const Orders = () => {
     },[])
 
 
+    const handleDelete = id => {
+        const proceed = confirm('Are tou sure you want to delete!');
+        if (proceed) {
+            fetch(`http://localhost:5000/orders/${id}`,{
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.deletedCount > 0){
+                    alert('Deleted Successfully');
+                    const remaining = orders.filter(order => order._id !== id)
+                    setOrders(remaining);
+                }
+            })
+        }
+    }
+
+
 
     return (
         <div>
-            <h2>your orders: {orders.length}</h2>
+            <h2>Your  orders: {orders.length}</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
@@ -46,6 +65,7 @@ const Orders = () => {
                         orders.map(order => <OrdersRow
                         key={order._id}
                         order={order}
+                        handleDelete={handleDelete}
                         >
 
                         </OrdersRow>)
