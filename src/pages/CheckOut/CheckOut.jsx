@@ -123,7 +123,7 @@ const CheckOut = () => {
 
                     <input className="btn btn-primary btn-block" type="submit" value='Order Confirm' />
                    <br />
-                   <Link to='/' className="mt-5"> <input  className="btn btn-primary btn-block" type="submit" value='Back To Home' /></Link>
+                   <Link to='/' className="mt-5"> <input  className="btn btn-accent btn-block" type="submit" value='Back To Home' /></Link>
                 </div>
             </form>
             <div className="card-body">

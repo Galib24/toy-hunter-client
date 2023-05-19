@@ -8,11 +8,13 @@ import ViewDetails from "../pages/ViewDetals/ViewDetails";
 import CheckOut from "../pages/CheckOut/CheckOut";
 import Orders from "../pages/oders/Orders";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/Error/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -39,7 +41,8 @@ const router = createBrowserRouter([
       {
         path: 'orders',
         element: <PrivateRoute><Orders></Orders></PrivateRoute>
-      }
+      },
+    
     ]
   },
 ]);

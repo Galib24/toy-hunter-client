@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const OrdersRow = ({ order,handleDelete }) => {
@@ -35,9 +35,9 @@ const OrdersRow = ({ order,handleDelete }) => {
             <td>{ratings}</td>
             <td>{price}</td>
             <td className="text-center">{quantity}</td>
-            {/* <th>
-                <button  className="btn btn-ghost btn-xs">details</button>
-            </th> */}
+            <th>
+               <Link to={`/update/${_id}`}> <button  className="btn btn-ghost btn-xs">details</button></Link>
+            </th>
         </tr>
     );
 };

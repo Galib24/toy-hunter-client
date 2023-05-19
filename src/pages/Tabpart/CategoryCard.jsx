@@ -16,7 +16,7 @@ const CategoryCard = ({category}) => {
             <p>Price: ${price}</p>
             <p>Rating: {Rating}</p>
             <div className="card-actions justify-end">
-                <button onClick={()=> navigate(`viewDetails/${_id}`)} className="btn btn-primary">View Details</button>
+                <button onClick={()=> navigate(`viewDetails/${_id}`)} className="btn btn-accent">View Details</button>
             </div>
         </div>
     </div>
