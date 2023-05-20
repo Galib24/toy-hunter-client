@@ -3,9 +3,11 @@
 
 const SellerPart = () => {
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200" data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000">
             <div className="hero-content flex-col lg:flex-row">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" className="max-w-sm rounded-lg shadow-2xl" />
+                <img  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" className="max-w-sm rounded-lg shadow-2xl" />
                 <div>
                     <h1 className="text-5xl text-violet-600 font-bold text-center">Seller Speech</h1>
                     <p className="py-6">Ladies and gentlemen, esteemed guests and valued customers,
