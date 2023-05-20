@@ -12,7 +12,7 @@ const CategoryCard = ({category}) => {
    
     const {img,title,price,Rating,_id} = category
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-96 bg-base-100 shadow-xl" data-aos="flip-right">
         <figure><img className="w-full" src={img} alt="Shoes" /></figure>
         <div className="card-body">
             <h2 className="card-title"> {title}</h2>

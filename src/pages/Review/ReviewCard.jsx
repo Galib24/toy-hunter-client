@@ -8,7 +8,7 @@ import '@smastrom/react-rating/style.css'
 const ReviewCard = ({ review }) => {
     const { image, name, comment, rating } = review
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-96 bg-base-100 shadow-xl" data-aos="flip-left">
             <figure><img src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
